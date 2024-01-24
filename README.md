@@ -1,14 +1,23 @@
  [![Gitter](https://img.shields.io/badge/Available%20on-Intersystems%20Open%20Exchange-00b2a9.svg)](https://openexchange.intersystems.com/package/iris-fhir-template)
 
-# Iris FHIR 
-Using the tools from OpenAI and Intersystems FHIR SQL Builder, the user will be able to freely write in a text box the data they wish to obtain from the database. OpenAI will convert this text into SQL query calls that will consume the tables created by the Intersystems FHIR SQL Builder.
+# FHIR Data Query Application with OpenAI Integration
+## Overview
+This repository hosts a cutting-edge application designed to revolutionize how users interact with healthcare data. The application comprises two primary components, each running in its own container: a database utilizing the InterSystems FHIR technology, configured with tables via the FHIR SQL Builder, and a .NET application with a front-end interface.
+
+## Components
+### Container 1: InterSystems FHIR Database
+Functionality: This container runs an InterSystems FHIR database. The database schema is meticulously crafted using the FHIR SQL Builder, ensuring an optimized structure for storing and retrieving patient information efficiently and securely.
+
+### Container 2: .NET Application
+Front-End Interface: The .NET application features a user-friendly front-end interface. Users can input their data queries into a text box, making the process of data retrieval straightforward and accessible.
+Integration with OpenAI: Utilizing the OpenAI API, the application translates natural language queries into precise SQL commands. This innovative approach allows users without SQL knowledge to interact with the database effortlessly.
+Data Retrieval: The generated SQL queries interact with the InterSystems FHIR database to fetch requested patient data, demonstrating a seamless integration between the front-end interface and the database.
+
 
 ## Prerequisites
 Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
 
 ## Installation 
-
-### IPM
 
 ### Docker (e.g. for dev purposes)
 
@@ -56,18 +65,6 @@ GET call for http://localhost:32783/fhir/r4/metadata
 Open Postman and make a GET call for the preloaded Patient:
 http://localhost:32783/fhir/r4/Patient/1
 <img width="884" alt="Screenshot 2020-08-07 at 17 42 26" src="https://user-images.githubusercontent.com/2781759/89657252-71606d80-d8d5-11ea-957f-041dbceffdc8.png">
-
-
-## Testing FHIR API calls in simple frontend APP
-
-the very basic frontend app with search and get calls to Patient and Observation FHIR resources could be found here:
-http://localhost:32783/fhirUI/FHIRAppDemo.html
-or from VSCode ObjectScript menu:
-<img width="616" alt="Screenshot 2020-08-07 at 17 34 49" src="https://user-images.githubusercontent.com/2781759/89657546-ea5fc500-d8d5-11ea-97ed-6fbbf84da655.png">
-
-While open the page you will see search result for female anemic patients and graphs a selected patient's hemoglobin values:
-<img width="484" alt="Screenshot 2020-08-06 at 18 51 22" src="https://user-images.githubusercontent.com/2781759/89657718-2b57d980-d8d6-11ea-800f-d09dfb48f8bc.png">
-
 
 ## What's inside the repository
 
