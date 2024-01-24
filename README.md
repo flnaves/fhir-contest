@@ -1,8 +1,7 @@
  [![Gitter](https://img.shields.io/badge/Available%20on-Intersystems%20Open%20Exchange-00b2a9.svg)](https://openexchange.intersystems.com/package/iris-fhir-template)
 
-# iris-fhirserver-template
-This is an application to participate in the InterSystems FHIR and Digital Health Interoperability Contest. It will create two containers: one with the InterSystems Health Community Edition Database as a FHIR Server and set up with FHIR SQL Builder, which will create some tables allowing easy access to data from the FHIR server. 
-It will have another container with a .NET application that will use OpenAI to generate queries for the user. The user will only need to specify the data they want in the prompt, and the application will generate all the queries.
+# Iris FHIR 
+Using the tools from OpenAI and Intersystems FHIR SQL Builder, the user will be able to freely write in a text box the data they wish to obtain from the database. OpenAI will convert this text into SQL query calls that will consume the tables created by the Intersystems FHIR SQL Builder.
 
 ## Prerequisites
 Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
@@ -10,20 +9,6 @@ Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installi
 ## Installation 
 
 ### IPM
-
-Open IRIS for Health installation with IPM client installed. Call in any namespace:
-
-```
-USER>zpm "install fhir-server"
-```
-
-This will install FHIR server in FHIRSERVER namespace.
-
-Or call the following for installing programmatically:
-```
-set sc=$zpm("install fhir-server")
-```
-
 
 ### Docker (e.g. for dev purposes)
 
@@ -84,27 +69,7 @@ While open the page you will see search result for female anemic patients and gr
 <img width="484" alt="Screenshot 2020-08-06 at 18 51 22" src="https://user-images.githubusercontent.com/2781759/89657718-2b57d980-d8d6-11ea-800f-d09dfb48f8bc.png">
 
 
-## Development Resources
-[InterSystems IRIS FHIR Documentation](https://docs.intersystems.com/irisforhealth20203/csp/docbook/Doc.View.cls?KEY=HXFHIR)
-[FHIR API](http://hl7.org/fhir/resourcelist.html)
-[Developer Community FHIR section](https://community.intersystems.com/tags/fhir)
-
 ## What's inside the repository
-
-### Dockerfile
-
-The simplest dockerfile which starts IRIS and imports Installer.cls and then runs the Installer.setup method, which creates IRISAPP Namespace and imports ObjectScript code from /src folder into it.
-Use the related docker-compose.yml to easily setup additional parametes like port number and where you map keys and host folders.
-Use .env/ file to adjust the dockerfile being used in docker-compose.
-
-
-### .vscode/settings.json
-
-Settings file to let you immedietly code in VSCode with [VSCode ObjectScript plugin](https://marketplace.visualstudio.com/items?itemName=daimor.vscode-objectscript))
-
-### .vscode/launch.json
-Config file if you want to debug with VSCode ObjectScript
-
 
 ## Troubleshooting
 **ERROR #5001: Error -28 Creating Directory /usr/irissys/mgr/FHIRSERVER/**
