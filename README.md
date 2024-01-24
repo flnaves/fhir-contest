@@ -1,10 +1,8 @@
  [![Gitter](https://img.shields.io/badge/Available%20on-Intersystems%20Open%20Exchange-00b2a9.svg)](https://openexchange.intersystems.com/package/iris-fhir-template)
- [![Quality Gate Status](https://community.objectscriptquality.com/api/project_badges/measure?project=intersystems_iris_community%2Firis-fhir-template&metric=alert_status)](https://community.objectscriptquality.com/dashboard?id=intersystems_iris_community%2Firis-fhir-template)
- [![Reliability Rating](https://community.objectscriptquality.com/api/project_badges/measure?project=intersystems_iris_community%2Firis-fhir-template&metric=reliability_rating)](https://community.objectscriptquality.com/dashboard?id=intersystems_iris_community%2Firis-fhir-template)
-# iris-fhirserver-template
-This is the base template for using InterSystems IRIS for Health Community Edition as a FHIR Server
 
-It setups a FHIR SERVER, imports the test data, demoes REST API usage with a simple web page.
+# iris-fhirserver-template
+This is an application to participate in the InterSystems FHIR and Digital Health Interoperability Contest. It will create two containers: one with the InterSystems Health Community Edition Database as a FHIR Server and set up with FHIR SQL Builder, which will create some tables allowing easy access to data from the FHIR server. 
+It will have another container with a .NET application that will use OpenAI to generate queries for the user. The user will only need to specify the data they want in the prompt, and the application will generate all the queries.
 
 ## Prerequisites
 Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
@@ -16,14 +14,14 @@ Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installi
 Open IRIS for Health installation with IPM client installed. Call in any namespace:
 
 ```
-USER>zpm "install fhir-server"
+//USER>zpm "install fhir-server"
 ```
 
-This will install FHIR server in FHIRSERVER namespace.
+//This will install FHIR server in FHIRSERVER namespace.
 
-Or call the following for installing programmatically:
+//Or call the following for installing programmatically:
 ```
-set sc=$zpm("install fhir-server")
+//set sc=$zpm("install fhir-server")
 ```
 
 
