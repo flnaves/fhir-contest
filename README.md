@@ -56,17 +56,14 @@ FHIRSERVER>do ##class(HS.FHIRServer.Tools.DataLoader).SubmitResourceFiles("/home
 Open URL http://localhost:32783/fhir/r4/metadata
 you should see the output of fhir resources on this server
 
-## Testing Postman calls
-Get fhir resources metadata
-GET call for http://localhost:32783/fhir/r4/metadata
-<img width="881" alt="Screenshot 2020-08-07 at 17 42 04" src="https://user-images.githubusercontent.com/2781759/89657453-c7cdac00-d8d5-11ea-8fed-71fa8447cc45.png">
+## Testing Postman and FHIR SQL calls
+Open Postman and make a GET call for all preloaded Patient:
+http://localhost:52773/fhir/r4/Patient
+<img width="1018" alt="Screenshot 2024-01-24 at 18 27 30" src="https://github.com/flnaves/fhir-contest/assets/20970112/dda9e5ad-67f7-4a2b-8720-f58741bb84a2">
 
-
-Open Postman and make a GET call for the preloaded Patient:
-http://localhost:32783/fhir/r4/Patient/1
-<img width="884" alt="Screenshot 2020-08-07 at 17 42 26" src="https://user-images.githubusercontent.com/2781759/89657252-71606d80-d8d5-11ea-957f-041dbceffdc8.png">
-
-## What's inside the repository
+Open Intersystems SQL Editor and do the following query:
+http://localhost:52773/csp/sys/exp/%25CSP.UI.Portal.SQL.Home.zen?$NAMESPACE=FHIRSERVER
+<img width="1430" alt="Screenshot 2024-01-24 at 18 37 03" src="https://github.com/flnaves/fhir-contest/assets/20970112/262a814f-7b27-46f5-b094-9b33c56a20c6"> 
 
 ## Troubleshooting
 **ERROR #5001: Error -28 Creating Directory /usr/irissys/mgr/FHIRSERVER/**
