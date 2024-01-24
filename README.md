@@ -14,14 +14,14 @@ Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installi
 Open IRIS for Health installation with IPM client installed. Call in any namespace:
 
 ```
-//USER>zpm "install fhir-server"
+USER>zpm "install fhir-server"
 ```
 
-//This will install FHIR server in FHIRSERVER namespace.
+This will install FHIR server in FHIRSERVER namespace.
 
-//Or call the following for installing programmatically:
+Or call the following for installing programmatically:
 ```
-//set sc=$zpm("install fhir-server")
+set sc=$zpm("install fhir-server")
 ```
 
 
@@ -40,10 +40,10 @@ $ docker-compose up -d
 ```
 
 ## Patient data
-The template goes with 5 preloaded patents in [/data/fhir](https://github.com/intersystems-community/iris-fhir-server-template/tree/master/data/fhir) folder which are being loaded during [docker build](https://github.com/intersystems-community/iris-fhir-server-template/blob/8bd2932b34468f14530a53d3ab5125f9077696bb/iris.script#L26)
+The template goes with 19 preloaded patents in [/data/fhir](https://github.com/intersystems-community/iris-fhir-server-template/tree/master/data/fhir) folder which are being loaded during [docker build](https://github.com/intersystems-community/iris-fhir-server-template/blob/8bd2932b34468f14530a53d3ab5125f9077696bb/iris.script#L26)
 You can generate more patients doing the following. Open shel terminal in repository folder and call:
 ```
-#./synthea-loader.sh 10
+docker run --rm -v $PWD/output:/output --name synthea-docker intersystemsdc/irisdemo-base-synthea:version-1.3.4 -p 10
 ```
 this will create 10 more patients in data/fhir folder.
 Then open IRIS terminal in FHIRSERVER namespace with the following command:
@@ -52,7 +52,7 @@ docker-compose exec iris iris session iris -U FHIRServer
 ```
 and call the loader method:
 ```
-FHIRSERVER>d ##class(fhirtemplate.Setup).LoadPatientData("/irisdev/app/output/fhir","FHIRSERVER","/fhir/r4")
+FHIRSERVER>do ##class(HS.FHIRServer.Tools.DataLoader).SubmitResourceFiles("/home/irisowner/irisdev/app/output/fhir", "FHIRSERVER","/fhir/r4")
 ```
 
  with using the [following project](https://github.com/intersystems-community/irisdemo-base-synthea)
