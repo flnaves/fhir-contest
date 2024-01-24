@@ -58,11 +58,21 @@ you should see the output of fhir resources on this server
 
 ## Testing Postman and FHIR SQL calls
 Open Postman and make a GET call for all preloaded Patient:
+```
 http://localhost:52773/fhir/r4/Patient
+```
 <img width="1018" alt="Screenshot 2024-01-24 at 18 27 30" src="https://github.com/flnaves/fhir-contest/assets/20970112/dda9e5ad-67f7-4a2b-8720-f58741bb84a2">
 
-Open Intersystems SQL Editor and do the following query:
+Open Intersystems SQL Editor and perform the following query:
+```
 http://localhost:52773/csp/sys/exp/%25CSP.UI.Portal.SQL.Home.zen?$NAMESPACE=FHIRSERVER
+```
+
+```
+SELECT 
+ID, BirthDate, DeceasedDateTime, Gender, IdentifierValue, Key, UsCoreEthnicityOmbCategoryValueCodingDisplay, UsCoreEthnicityTextValueString, UsCoreEthnicityUrl, UsCoreRaceOmbCategoryValueCodingDisplay, UsCoreRaceTextValueString, UsCoreRaceUrl
+FROM TransformationSparta.Patient
+```
 <img width="1430" alt="Screenshot 2024-01-24 at 18 37 03" src="https://github.com/flnaves/fhir-contest/assets/20970112/262a814f-7b27-46f5-b094-9b33c56a20c6"> 
 
 ## Troubleshooting
