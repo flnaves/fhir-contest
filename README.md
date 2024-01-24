@@ -32,7 +32,7 @@ set sc=$zpm("install fhir-server")
 Clone/git pull the repo into any local directory
 
 ```
-$ git clone https://github.com/intersystems-community/iris-fhir-template.git
+$ git clone https://github.com/flnaves/fhir-contest.git
 ```
 
 Open the terminal in this directory and run:
