@@ -46,7 +46,7 @@ docker-compose exec iris iris session iris -U FHIRServer
 ```
 and call the loader method:
 ```
-FHIRSERVER>do ##class(HS.FHIRServer.Tools.DataLoader).SubmitResourceFiles("/home/irisowner/irisdev/app/output/fhir", "FHIRSERVER","/fhir/r4")
+do ##class(HS.FHIRServer.Tools.DataLoader).SubmitResourceFiles("/home/irisowner/irisdev/app/output/fhir/", "FHIRSERVER", "/fhir/r4")
 ```
 
  with using the [following project](https://github.com/intersystems-community/irisdemo-base-synthea)
@@ -63,11 +63,11 @@ http://localhost:52773/fhir/r4/Patient
 ```
 <img width="1018" alt="Screenshot 2024-01-24 at 18 27 30" src="https://github.com/flnaves/fhir-contest/assets/20970112/dda9e5ad-67f7-4a2b-8720-f58741bb84a2">
 
-Open Intersystems SQL Editor and perform the following query:
+Open Intersystems SQL Editor:
 ```
 http://localhost:52773/csp/sys/exp/%25CSP.UI.Portal.SQL.Home.zen?$NAMESPACE=FHIRSERVER
 ```
-
+And perform the following query:
 ```
 SELECT 
 ID, BirthDate, DeceasedDateTime, Gender, IdentifierValue, Key, UsCoreEthnicityOmbCategoryValueCodingDisplay, UsCoreEthnicityTextValueString, UsCoreEthnicityUrl, UsCoreRaceOmbCategoryValueCodingDisplay, UsCoreRaceTextValueString, UsCoreRaceUrl
