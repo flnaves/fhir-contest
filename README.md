@@ -53,7 +53,7 @@ do ##class(HS.FHIRServer.Tools.DataLoader).SubmitResourceFiles("/home/irisowner/
 
 ## Testing FHIR R4 API
 
-Open URL http://localhost:32783/fhir/r4/metadata
+Open URL http://localhost:52773/fhir/r4/metadata
 you should see the output of fhir resources on this server
 
 ## Testing Postman and FHIR SQL calls
@@ -62,6 +62,11 @@ Open Postman and make a GET call for all preloaded Patient:
 http://localhost:52773/fhir/r4/Patient
 ```
 <img width="1018" alt="Screenshot 2024-01-24 at 18 27 30" src="https://github.com/flnaves/fhir-contest/assets/20970112/dda9e5ad-67f7-4a2b-8720-f58741bb84a2">
+
+Access this link http://localhost:52773/csp/fhirsql/index.html#/ to view the settings of the FHIR SQL Builder:
+http://localhost:52773/csp/fhirsql/index.html#/
+
+<img width="1430" alt="Screenshot 2024-01-26 at 10 38 43" src="https://github.com/flnaves/fhir-contest/assets/20970112/afa66fae-07eb-455b-8b82-8bd43b8fcb94">
 
 Open Intersystems SQL Editor:
 ```
