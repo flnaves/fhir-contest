@@ -63,16 +63,10 @@ http://localhost:52773/fhir/r4/Patient
 ```
 <img width="1018" alt="Screenshot 2024-01-24 at 18 27 30" src="https://github.com/flnaves/fhir-contest/assets/20970112/dda9e5ad-67f7-4a2b-8720-f58741bb84a2">
 
-Access this link http://localhost:52773/csp/fhirsql/index.html#/ to view the settings of the FHIR SQL Builder:
-http://localhost:52773/csp/fhirsql/index.html#/
-
+Access the FHIR SQL Builder view at http://localhost:52773/csp/fhirsql/index.html#/ to verify if all settings have been uploaded:
 <img width="1430" alt="Screenshot 2024-01-26 at 10 38 43" src="https://github.com/flnaves/fhir-contest/assets/20970112/afa66fae-07eb-455b-8b82-8bd43b8fcb94">
 
-Open Intersystems SQL Editor:
-```
-http://localhost:52773/csp/sys/exp/%25CSP.UI.Portal.SQL.Home.zen?$NAMESPACE=FHIRSERVER
-```
-And perform the following query:
+Open Intersystems SQL Editor http://localhost:52773/csp/sys/exp/%25CSP.UI.Portal.SQL.Home.zen?$NAMESPACE=FHIRSERVER and perform the following query:
 ```
 SELECT 
 ID, BirthDate, DeceasedDateTime, Gender, IdentifierValue, Key, UsCoreEthnicityOmbCategoryValueCodingDisplay, UsCoreEthnicityTextValueString, UsCoreEthnicityUrl, UsCoreRaceOmbCategoryValueCodingDisplay, UsCoreRaceTextValueString, UsCoreRaceUrl
